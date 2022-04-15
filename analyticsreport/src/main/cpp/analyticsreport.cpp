@@ -1,5 +1,3 @@
-// Write C++ code here.
-//
 #define JNICALL
 #include <cctype>
 #include <cstdio>
@@ -243,28 +241,5 @@ ps_threads(pid, namefilter);
 }
 }
 closedir(d);
-//printf("Stored Data : %s\n",data_for_jni);
     return env->NewStringUTF(data_for_jni);
 }
-
-//extern "C"
-//JNIEXPORT jstring JNICALL
-//Java_com_example_analyticsreport_CrashReporter_getCurrentProcesses(JNIEnv *env, jobject thiz) {
-//    return (jstring) "Hello from C++ Source file";
-//}
-
-// Do not forget to dynamically load the C++ library into your application.
-//
-// For instance,
-//
-// In MainActivity.java:
-//    static {
-//       System.loadLibrary("analyticsreport");
-//    }
-//
-// Or, in MainActivity.kt:
-//    companion object {
-//      init {
-//         System.loadLibrary("analyticsreport")
-//      }
-//    }

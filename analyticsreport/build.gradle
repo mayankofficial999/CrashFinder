@@ -14,7 +14,6 @@ android {
     }
 
     defaultConfig {
-        //applicationId "com.example.analyticsreport"
         minSdk 24
         targetSdk 32
 
@@ -42,12 +41,10 @@ android {
 }
 
 configurations {
-    includeJars // define new configuration
+    includeJars
 }
 
 dependencies {
-    //implementation fileTree(dir: 'libs', include: ['*.jar'])
-    //includeJars(name:'third_party_legacy_do_not_touch', ext:'jar')
     embed "com.squareup.okhttp3:okhttp:4.9.3"
     embed "com.squareup.okio:okio:2.8.0"
     embed "com.fasterxml.jackson.module:jackson-module-kotlin:2.12.1"

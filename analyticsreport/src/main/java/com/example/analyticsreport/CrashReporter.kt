@@ -31,7 +31,6 @@ class CrashReporter {
     }
 
     fun init(api_url:String) {
-        //Log.e("Dekho Processs ko ek baar : ",CrashReporter().getCurrentProcesses().length.toString())
         val currentThread = Thread.currentThread()
         currentThread.setUncaughtExceptionHandler { _, exc ->
             var reqData=""
@@ -41,7 +40,6 @@ class CrashReporter {
                 reqData += "\n"
             }
             val temp=getCurrentProcesses();
-            //Log.e("Dekho Processs ko ek baar : ",temp)
             reqData+="\n";
             reqData+=temp;
             sendPostRequest(api_url,reqData)

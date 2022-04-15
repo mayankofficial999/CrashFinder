@@ -14,11 +14,8 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         //Add api url to get data
         CrashReporter().init("http://10.0.2.2:4000")
-        //Uncomment Test Cases for crash
+        //Uncomment Test Cases to test crash report
         //throw InterruptedException("Custom Exception !")
-        //val y=Math.pow(999999999.0, 999.0)
-        //val z=2/"hello"
         //val x=10/0
-
     }
 }
