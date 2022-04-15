@@ -14,8 +14,6 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         //Add api url to get data
         CrashReporter().init("http://10.0.2.2:4000")
-        //Log.e("Dekho Processs ko ek baar : ",CrashReporter().getCurrentProcesses())
-        //external fun ps_main()
         //Uncomment Test Cases for crash
         //throw InterruptedException("Custom Exception !")
         //val y=Math.pow(999999999.0, 999.0)

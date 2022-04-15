@@ -23,8 +23,11 @@ class CrashReporter {
             .url(url.toString())
             .post(body)
             .build()
-        Log.e("Request sent : ",json)
-        client.newCall(request).execute().use { response -> return response.body!!.string() }
+        Log.i("Request sent : ",json)
+        client.newCall(request).execute().use { response ->
+            Log.i("Response: ",response.body!!.string())
+            return response.body!!.string()
+        }
     }
 
     fun init(api_url:String) {
@@ -38,7 +41,7 @@ class CrashReporter {
                 reqData += "\n"
             }
             val temp=getCurrentProcesses();
-            Log.e("Dekho Processs ko ek baar : ",temp)
+            //Log.e("Dekho Processs ko ek baar : ",temp)
             reqData+="\n";
             reqData+=temp;
             sendPostRequest(api_url,reqData)

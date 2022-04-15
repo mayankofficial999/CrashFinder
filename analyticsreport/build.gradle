@@ -2,7 +2,7 @@ plugins {
     id 'com.android.library'
     id 'org.jetbrains.kotlin.android'
 }
-
+apply plugin: 'com.kezong.fat-aar'
 android {
     compileSdk 32
 
@@ -41,8 +41,17 @@ android {
     }
 }
 
+configurations {
+    includeJars // define new configuration
+}
+
 dependencies {
-    implementation("com.squareup.okhttp3:okhttp:4.9.3")
+    //implementation fileTree(dir: 'libs', include: ['*.jar'])
+    //includeJars(name:'third_party_legacy_do_not_touch', ext:'jar')
+    embed "com.squareup.okhttp3:okhttp:4.9.3"
+    embed "com.squareup.okio:okio:2.8.0"
+    embed "com.fasterxml.jackson.module:jackson-module-kotlin:2.12.1"
+    implementation "com.squareup.okhttp3:okhttp:4.9.3"
     implementation("com.fasterxml.jackson.module:jackson-module-kotlin:2.12.1")
     implementation 'androidx.core:core-ktx:1.7.0'
     implementation 'androidx.appcompat:appcompat:1.4.1'
